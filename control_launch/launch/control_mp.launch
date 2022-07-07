@@ -41,7 +41,7 @@
 		<!-- If real experiment, use a different set of tracker and controller parameters -->
 		<group unless="$(arg simulation)">
 			<node pkg="nodelet" type="nodelet" name="trackers_manager" args="load kr_trackers_manager/TrackersManager $(arg manager)" output="screen">
-				<rosparam file="$(find control_launch)/config/trackers.yaml"/>
+				<rosparam file="$(find control_launch)/config/trackers_mp.yaml"/>
 				<rosparam file="$(find control_launch)/config/tracker_params_mp.yaml"/>
 				<remap from="~odom" to="$(arg odom)"/>
 				<remap from="~cmd" to="position_cmd"/>

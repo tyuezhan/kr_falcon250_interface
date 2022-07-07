@@ -1,16 +1,15 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-	<arg name="mass" default="1.74"/>
+	<arg name="mass" default="1.2"/>
 	<arg name="gains_file" default="$(find control_launch)/config/so3_control_gains.yaml"/>
 	<arg name="robot" default="dcist_ariel" />
-	<arg name="odom_topic" default="/vicon/f250_ariel/odom" />
+	<arg name="odom_topic" default="/dcist_ariel/odom" />
 
 	<include file="$(find control_launch)/launch/control_mp.launch">
 			<arg name="mass" value="$(arg mass)"/>
 			<arg name="gains_file" value="$(arg gains_file)"/>
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="simulation" value="false">
+			<arg name="simulation" value="false"/>
 			<arg name="odom" value="$(arg odom_topic)" />
 	</include>
 

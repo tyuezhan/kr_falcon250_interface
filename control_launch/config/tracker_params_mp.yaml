@@ -59,8 +59,8 @@ local_global_server:
   max_local_plan_trials: 1 # should be set as 1 since state machine is now able to try multiple times after planner failures
   max_horizon: 10 # defulat 5, should be larger than local_plan_timeout_duration*max_local_plan_trials*local_replan_rate 
   global_planner_verbose: false # verbose mode, default false
-  odom_frame: "quadrotor/odom" # odometry reference frame
-  map_frame: "quadrotor/map" # SLAM reference frame (only for using two-reference-frame system, otherwise this should be set to be the same as odom_frame)
+  odom_frame: "dcist_ariel/odom" # odometry reference frame
+  map_frame: "dcist_ariel/map" # SLAM reference frame (only for using two-reference-frame system, otherwise this should be set to be the same as odom_frame)
 
 state_machine:
   local_replan_rate: 2.0 # local replan frequency, calling local planner every (1/local_replan_rate) seconds, (float 32)
