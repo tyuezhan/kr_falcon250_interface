@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find kr_mavros_interface)/launch/falcon250_px4_mavros.launch">
+    </include>
+
+    <include file="$(find kr_mavros_interface)/launch/falcon250_SO3_command_to_mavros.launch">
+    </include>
+</launch>
