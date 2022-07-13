@@ -163,6 +163,11 @@ void SO3CmdToMavros::so3_cmd_callback(
     thrust = f_des(0) * R_cur(0, 2) + f_des(1) * R_cur(1, 2) +
              f_des(2) * R_cur(2, 2);
   } else {
+    // thrust = f_des(0) * R_cur(0, 2) + f_des(1) * R_cur(1, 2) +
+    //          f_des(2) * R_cur(2, 2);
+    // std::cout << "the thrust is : " << thrust << std::endl;
+    // std::cout << "the psi is : " << Psi << std::endl;
+        
     ROS_WARN_THROTTLE(1, "psi > 1.0, thrust set to 0.0 in mavros_interface.");
   }
 
