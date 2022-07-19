@@ -4,12 +4,19 @@
 	<arg name="gains_file" default="$(find control_launch)/config/so3_control_gains.yaml"/>
 	<arg name="robot" default="f250_ariel" />
 	<arg name="odom_topic" default="/vicon/f250_ariel/odom" />
-	<arg name="use_vicon" default="true" />
+	<arg name="use_vicon" default="false" />
 
 	<!-- Vicon odometry -->
 	<group if="$(arg use_vicon)">
 		<include file="$(find mocap_vicon)/launch/vicon.launch"/>
 	</group>
+
+    <!-- realsense launch -->
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+
+    <!-- vins launch -->
+    <include file="$(find vins)/launch/f250_ariel.launch"/>
+
 
 	<include file="$(find control_launch)/launch/control_mp.launch">
 		<arg name="mass" value="$(arg mass)"/>
