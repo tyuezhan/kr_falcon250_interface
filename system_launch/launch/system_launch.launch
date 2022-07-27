@@ -5,6 +5,8 @@
 	<arg name="robot" default="f250_ariel" />
 	<arg name="odom_topic" default="/vicon/f250_ariel/odom" />
 	<arg name="use_vicon" default="false" />
+	<arg name="use_dsol" default="true" />
+	<arg name="use_vins" default="true" />
 
 	<!-- Vicon odometry -->
 	<group if="$(arg use_vicon)">
@@ -14,8 +16,15 @@
     <!-- realsense launch -->
     <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
 
+    <!-- dsol launch -->
+	<group if="$(arg use_dsol)">
+		<include file="$(find dsol)/launch/dsol_odom.launch"/>
+	</group>
+    
     <!-- vins launch -->
-    <include file="$(find vins)/launch/f250_ariel.launch"/>
+	<group if="$(arg use_vins)">
+		<include file="$(find vins)/launch/f250_ariel.launch"/>
+	</group>
 
 
 	<include file="$(find control_launch)/launch/control_mp.launch">
