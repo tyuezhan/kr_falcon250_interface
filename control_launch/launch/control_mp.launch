@@ -37,7 +37,7 @@
 			<remap from="~motors" to="motors"/>
 		</node>
 
-		<node pkg="kr_trackers" type="twist_to_velocity_goal.py" name="twist_to_velocity"/>
+		<!-- <node pkg="kr_trackers" type="twist_to_velocity_goal.py" name="twist_to_velocity"/> -->
 
 	</group>
 </launch>
