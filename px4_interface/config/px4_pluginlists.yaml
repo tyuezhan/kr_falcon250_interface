@@ -9,5 +9,6 @@ plugin_blacklist:
 - wheel_odometry
 
 
-plugin_whitelist: []
+plugin_whitelist: 
+- esc_status
 #- 'sys_*'

@@ -3,11 +3,16 @@
 	<arg name="mass" default="1.37"/>
 	<arg name="gains_file" default="$(find control_launch)/config/so3_control_gains.yaml"/>
 	<arg name="robot" default="f250_ariel" />
-	<arg name="odom_topic" default="/vicon/f250_ariel/odom" />
-	<arg name="use_vicon"  default="false" />
+	<!-- <arg name="odom_topic" default="/vicon/f250_ariel/odom" /> -->
+	<arg name="use_vicon"  default="true" />
 	<arg name="use_dsol"   default="false" />
-	<arg name="use_vins"   default="false" />
+	<arg name="use_vins"   default="true" />
 	<arg name="use_imu_vn" default="true" />
+	<arg name="safe_odom"  default="true" />
+
+    <arg name="odom_topic" default="/vins_fusion/imu_propagate" unless="$(arg safe_odom)" /> 
+    <arg name="odom_topic" default="/$(arg robot)/safe_odom/odom"  if="$(arg safe_odom)"/>
+    
 
 	<!-- Vicon odometry -->
 	<group if="$(arg use_vicon)">
@@ -32,6 +37,10 @@
 		<include file="$(find vins)/launch/f250_ariel.launch"/>
 	</group>
 
+    <!-- safe mode for odom launch -->
+	<group if="$(arg safe_odom)" ns="$(arg robot)">
+		<include file="$(find safe_odom)/launch/safe_odom.launch"/>
+	</group>
 
 	<include file="$(find control_launch)/launch/control_mp.launch">
 		<arg name="mass" value="$(arg mass)"/>

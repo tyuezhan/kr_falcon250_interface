@@ -267,4 +267,7 @@ wheel_odometry:
     frame_id: "map"
     child_frame_id: "base_link"
 
+esc_status:
+  count: 4
+
 # vim:set ts=2 sw=2 et:
