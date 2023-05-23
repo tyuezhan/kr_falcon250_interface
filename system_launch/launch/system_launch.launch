@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-	<arg name="mass" default="1.37"/>
+	<arg name="mass" default="1.43"/>
 	<arg name="gains_file" default="$(find control_launch)/config/so3_control_gains.yaml"/>
 	<arg name="robot" default="f250_ariel" />
 	<!-- <arg name="odom_topic" default="/vicon/f250_ariel/odom" /> -->
@@ -8,12 +8,14 @@
 	<arg name="use_dsol"   default="false" />
 	<arg name="use_vins"   default="false" />
 	<arg name="use_imu_vn" default="false" />
+	<arg name="use_voxl"   default="false" />
 	<arg name="safe_odom"  default="false" />
 
     <!-- <arg name="odom_topic" default="/vins_fusion/imu_propagate" unless="$(arg safe_odom)" /> 
     <arg name="odom_topic" default="/$(arg robot)/safe_odom/odom"  if="$(arg safe_odom)"/> -->
-    <arg name="odom_topic" default="/vicon/f250_ariel/odom"/>
-
+    <!-- <arg name="odom_topic" default="/vicon/f250_ariel/odom"/> -->
+	<arg name="odom_topic" default="/dragonfly67/quadrotor_ukf/control_odom"/>
+	
 	<!-- Vicon odometry -->
 	<group if="$(arg use_vicon)">
 		<include file="$(find mocap_vicon)/launch/vicon.launch"/>
