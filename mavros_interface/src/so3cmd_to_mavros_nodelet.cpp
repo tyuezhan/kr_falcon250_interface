@@ -207,7 +207,20 @@ void SO3CmdToMavros::so3_cmd_callback(
 
 void SO3CmdToMavros::onInit(void) {
   ros::NodeHandle priv_nh(getPrivateNodeHandle());
-
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  ROS_ERROR("f250 mav ros interface!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
   if (!priv_nh.getParam("check_psi", check_psi_)) check_psi_ = true;
   if (!check_psi_)
     ROS_WARN(
