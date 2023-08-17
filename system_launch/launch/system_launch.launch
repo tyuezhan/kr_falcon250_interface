@@ -62,4 +62,7 @@
 		<include file="$(find px4_interface)/launch/px4_mavros.launch">
 	</include>
 	</group>
+
+	<node pkg="tf2_ros" type="static_transform_publisher" name="init_world_odom_transform_pub" args="0 0 0 0 0 0 world odom"/>
+	<node pkg="tf2_ros" type="static_transform_publisher" name="init_odom_robotodom_transform_pub" args="0 0 0 0 0 0 odom dragonfly67/odom"/>
 </launch>

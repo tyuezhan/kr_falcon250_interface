@@ -17,17 +17,17 @@
   <!-- <arg name="rpm_vs_throttle_coeff_b" default="-510.1"/> -->
 
   <!-- 6" transparent props -->
-  <!-- <arg name="thrust_vs_rpm_coeff_a" default="2.950e-8"/>
-  <arg name="thrust_vs_rpm_coeff_b" default="-6.384e-5"/>
-  <arg name="thrust_vs_rpm_coeff_c" default="9.562e-2"/> -->
   <arg name="thrust_vs_rpm_coeff_a" default="2.950e-8"/>
   <arg name="thrust_vs_rpm_coeff_b" default="-6.384e-5"/>
-  <!-- <arg name="thrust_vs_rpm_coeff_c" default="8.062e-2"/> -->
-  <arg name="thrust_vs_rpm_coeff_c" default="6.062e-2"/>
+  <arg name="thrust_vs_rpm_coeff_c" default="8.062e-2"/>
+  <!-- <arg name="thrust_vs_rpm_coeff_c" default="6.062e-2"/> -->
 
-
-  <arg name="rpm_vs_throttle_coeff_a" default="1.961e4"/>
-  <arg name="rpm_vs_throttle_coeff_b" default="39.21"/>
+  <!-- RPM = a * throttle + b where throttle in [0,1] -->
+  <arg name="rpm_vs_throttle_coeff_a" default="1.794e4"/>
+  <arg name="rpm_vs_throttle_coeff_b" default="35.88"/>
+  <!-- original values -->
+  <!-- <arg name="rpm_vs_throttle_coeff_a" default="1.961e4"/>
+  <arg name="rpm_vs_throttle_coeff_b" default="39.21"/> -->
 
   <group ns="$(arg robot)">
     <node pkg="nodelet" type="nodelet" args="standalone mavros_interface/SO3CmdToMavros" name="so3cmd_to_mavros" required="true" clear_params="true" output="screen">
