@@ -11,3 +11,4 @@ trackers:
   - kr_trackers/LissajousTracker
   - kr_trackers/LissajousAdder
   - kr_trackers/PolyTracker
+  - kr_trackers/StoppingPolicy
